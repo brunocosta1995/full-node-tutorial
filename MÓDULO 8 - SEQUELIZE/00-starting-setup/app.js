@@ -8,6 +8,10 @@ const sequelize = require("./util/database");
 
 const Product = require("./models/product");
 const User = require("./models/user");
+const Cart = require("./models/cart");
+const CartItem = require("./models/cart-item");
+const Order = require("./models/order");
+const OrderItem = require("./models/order-item");
 
 const app = express();
 
@@ -38,6 +42,15 @@ app.use(errorController.get404);
 // Relação 1:N: um Product pertence a um User (FK com CASCADE) e um User pode ter vários Products.
 Product.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 User.hasMany(Product);
+User.hasOne(Cart);
+Cart.belongsTo(User);
+// 'through' detalha onde a relação entre N:N vai estar criar que é CartItem
+Cart.belongsToMany(Product, { through: CartItem });
+Product.belongsToMany(Cart, { through: CartItem });
+Order.belongsTo(User);
+User.hasMany(Order)
+Order.belongsToMany(Product, {through: OrderItem});
+
 
 sequelize
   // .sync({force: true})
@@ -50,6 +63,9 @@ sequelize
       return User.create({ name: "Bruno", email: "teste@teste.com" });
     }
     return user;
+  })
+  .then((user) => {
+    return user.createCart();
   })
   .then((result) => {
     console.log(result);
