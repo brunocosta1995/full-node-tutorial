@@ -1,0 +1,6 @@
+INSERT INTO products (title, price, description, imageUrl, createdAt, updatedAt, userId) VALUES
+('Smartphone Android X', 1999.99, 'Smartphone com tela AMOLED de 6.5", 128GB de armazenamento e câmera tripla.', 'https://t2.tudocdn.net/720005?w=824&h=494', NOW(), NOW(), 1),
+('Notebook Gamer Pro', 5499.90, 'Notebook com processador Intel i7, 16GB RAM, placa de vídeo dedicada e SSD 512GB.', 'https://www.tecmobile.com.br/wp-content/uploads/2021/04/Notebook-Gamer-ASUS-ROG-Strix-G16.webp', NOW(), NOW(), 1),
+('Fone de Ouvido Bluetooth', 299.50, 'Fones de ouvido sem fio com cancelamento de ruído ativo e bateria de longa duração.', 'https://m.media-amazon.com/images/I/51xuDWMXfRL._UF1000,1000_QL80_.jpg', NOW(), NOW(), 1),
+('Smart TV 50" 4K', 2799.00, 'TV com resolução 4K UHD, HDR10, Wi-Fi integrado e acesso a apps de streaming.', 'https://d1j48ryyrcdvj8.cloudfront.net/Custom/Content/Products/98/79/98798_smart-tv-50-philips-4k-50pug7019-78-preta_m1_638718408998573332.webp', NOW(), NOW(), 1),
+('Cadeira Gamer Ergonômica', 899.90, 'Cadeira com apoio lombar, encosto reclinável, e estrutura reforçada para conforto prolongado.', 'https://dcdn-us.mitiendanube.com/stores/940/110/products/cadeira-gamer-9915-1-388d150af2563e8dc717299796866415-480-0.jpg', NOW(), NOW(), 1);
